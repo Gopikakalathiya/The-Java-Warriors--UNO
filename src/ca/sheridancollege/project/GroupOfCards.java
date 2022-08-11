@@ -4,7 +4,7 @@
  * Add your name as a modifier and the date!
  * 
  * 
- * Modifier: Group - The Java Warriors - UNO
+ * Modifier: Group - The Java Warriors - UNO - Gopika, Ramandeep, Naman, Simaran
  * Date: 11th June, 2022
  */
 package ca.sheridancollege.project;
@@ -77,6 +77,5 @@ public class GroupOfCards
     void addCard(Player currPlayer) {
         Card deleteCard = cards.remove(0);
             currPlayer.getHandCards().add(deleteCard);
-    }
-    
+    } 
 }//end class

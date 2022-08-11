@@ -7,7 +7,7 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author Group - The Java Warriors - UNO
+ * @author Group - The Java Warriors - UNO - Gopika, Ramandeep, Naman, Simaran
  */
 public enum CardColor {
     BLUE(0, "Blue"),
