@@ -15,9 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Admin
  */
-public class CardColorTest {
+public class CardNoTest {
     
-    public CardColorTest() {
+    public CardNoTest() {
     }
     
     @BeforeAll
@@ -36,95 +36,81 @@ public class CardColorTest {
     public void tearDown() {
     }
 
+   
     /**
-     * Test of values method, of class CardColor.
+     * Test of getIndex method, of class CardNo.
      */
-  
-    /**
-     * Test of getIndex method, of class CardColor.
-     */
-      @Test
+    @Test
     public void testGetIndexGood() {
         System.out.println("getIndex");
-        CardColor instance = null;
+        CardNo instance = null;
         instance.setIndex(0);
         int expResult = 0;
         int result = instance.getIndex();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
-    @Test
+     @Test
     public void testGetIndexBad() {
         System.out.println("getIndex");
-        CardColor instance = null;
-        instance.setIndex(1223123);
+        CardNo instance = null;
+        instance.setIndex(0001);
         int expResult = 0;
         int result = instance.getIndex();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
-    @Test
+     @Test
     public void testGetIndexBoundary() {
         System.out.println("getIndex");
-        CardColor instance = null;
+        CardNo instance = null;
         int expResult = 0;
         int result = instance.getIndex();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
-     * Test of setIndex method, of class CardColor.
+     * Test of setIndex method, of class CardNo.
      */
- 
+    
 
-    /**
-     * Test of getName method, of class CardColor.
-     */
+   
     @Test
     public void testGetNameGood() {
         System.out.println("getName");
-        CardColor instance = null;
-        instance.setName("Blue");
-        String expResult = "Blue";
+        CardNo instance = null;
+        instance.setName("Seven");
+        String expResult = "Seven";
         String result = instance.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
-    @Test
+ @Test
     public void testGetNameBad() {
         System.out.println("getName");
-        CardColor instance = null;
-        instance.setName("fvfvfsvfv");
-        String expResult = "Blue";
+        CardNo instance = null;
+        instance.setName("eihbjcednn c");
+        String expResult = "Seven";
         String result = instance.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+      //  fail("The test case is a prototype.");
     }
-    @Test
+     @Test
     public void testGetNameBoundary() {
         System.out.println("getName");
-        CardColor instance = null;
-        String expResult = "Blue";
+        CardNo instance = null;
+        String expResult = "";
         String result = instance.getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
-
-    /**
-     * Test of setName method, of class CardColor.
-     */
-    
-
-    /**
-     * Test of toString method, of class CardColor.
-     */
-    
+ 
     
 }
