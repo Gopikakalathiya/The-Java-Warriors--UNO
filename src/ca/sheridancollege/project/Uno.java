@@ -40,8 +40,6 @@ public class Uno {
         Player currPlayer = p1;
         Player opponent = p2;
         while(!p1.getHandCards().isEmpty() && !p2.getHandCards().isEmpty()){
-            
-            
             //curr turn 
             if(turn%2 == 0)
             {
