@@ -7,7 +7,7 @@ package ca.sheridancollege.project;
 
 /**
  *
- * @author Gopika Kalathiya
+ * @author Group - The Java Warriors - UNO
  */
 public enum CardNo {
     ZERO(0, "Zero"),

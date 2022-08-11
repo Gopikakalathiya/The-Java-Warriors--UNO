@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Gopika Kalathiya
+ * @author Group - The Java Warriors - UNO
  */
 public class Uno {
     public static void main(String[] args) {
