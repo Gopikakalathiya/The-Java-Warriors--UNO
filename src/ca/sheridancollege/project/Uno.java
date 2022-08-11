@@ -77,14 +77,17 @@ public class Uno {
             Card currCard = currPlayer.getHandCards().get(chosenCard-1);
             
             //special actions
-            ///skip
+            
+            //skip
             if(currCard.getNum() == CardNo.SKIP){
-                turn++;
+                //same player get turn again since its 2 player game
+                turn--;
             }
             
             //reverse
             if(currCard.getNum() == CardNo.REVERSE){
-                //do nothing since it's two player game
+                //same player get turn again since its 2 player game
+                turn--;
             }
             
             //drawTwo
@@ -106,7 +109,7 @@ public class Uno {
             }
             
             
-            //check if he's the winner
+            //check if we get the winner
             currPlayer.getHandCards().remove(chosenCard - 1);
             if(game.declareWinner(currPlayer))
             {
