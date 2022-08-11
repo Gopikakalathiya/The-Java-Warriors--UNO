@@ -30,7 +30,6 @@ public class Game
         players = new ArrayList();
     }
 
-    
      /**
      * @return the players of this game
      */
