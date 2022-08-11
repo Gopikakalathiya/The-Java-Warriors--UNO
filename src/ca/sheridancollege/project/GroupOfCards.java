@@ -78,4 +78,9 @@ public class GroupOfCards
         Card deleteCard = cards.remove(0);
             currPlayer.getHandCards().add(deleteCard);
     } 
+
+    Card addCard() {
+        Card deleteCard = cards.remove(0);
+        return deleteCard;
+    }
 }//end class

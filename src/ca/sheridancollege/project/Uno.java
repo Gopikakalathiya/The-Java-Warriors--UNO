@@ -5,6 +5,8 @@
 
 package ca.sheridancollege.project;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -16,6 +18,9 @@ public class Uno {
         //create player
         Player p1 = new Player("Player 1");
         Player p2 = new Player("Player 2");
+        
+        //discard pile
+        List<Card> discard = new ArrayList<Card>();
         
         //create new game
         Game game = new Game();
@@ -33,8 +38,9 @@ public class Uno {
         
         deck.dealCard(p1);
         deck.dealCard(p2);
-        
+        discard.add(deck.addCard());
         System.out.println("Cards are dealt to both players, Play begins");
+        System.out.println("top card is : " + discard.get(discard.size()-1));
         
         int turn =0;
         Player currPlayer = p1;
@@ -63,15 +69,35 @@ public class Uno {
             //choose the card to play
             System.out.println(currPlayer.toString() + ": please choose a card to play");
             int chosenCard = -100;
+            Card currCard = null;
+            boolean skipPlay = true;
+            if(!canPlay(currPlayer.getHandCards(),discard.get(discard.size()-1))){
+                deck.addCard(currPlayer);
+                System.out.println("No cards to play a new card was drawn from drawing pile!! new card drawn is : " + currPlayer.getHandCards().get(currPlayer.getHandCards().size()-1));
+                skipPlay = false;
+            }
+            if(skipPlay)
+            {
             while(chosenCard < 0){
                 chosenCard = sc.nextInt();
-                if(chosenCard > currPlayer.getHandCards().size()){
+                if(chosenCard > currPlayer.getHandCards().size() && chosenCard < 0 ){
                     System.out.println("Invalid card No: please try again");
                     chosenCard = -100;
                     
+                }else{
+                    currCard = currPlayer.getHandCards().get(chosenCard-1);
+                    List<Card> currPlayerCard = new ArrayList<>();
+                    currPlayerCard.add(currCard);
+                    if(!canPlay(currPlayerCard,discard.get(discard.size()-1)))
+                    {
+                        System.out.println("Card cannot be played: top card is : " + discard.get(discard.size()-1));
+                        chosenCard = -100;
+                        
+                    }
                 }
+                
             }
-            Card currCard = currPlayer.getHandCards().get(chosenCard-1);
+            
             
             //special actions
             
@@ -107,7 +133,12 @@ public class Uno {
             
             
             //check if we get the winner
-            currPlayer.getHandCards().remove(chosenCard - 1);
+            
+            discard.add(currPlayer.getHandCards().remove(chosenCard - 1));
+            skipPlay = false;
+            }
+            System.out.println("top card is : " + discard.get(discard.size()-1));
+            System.out.println("----------------------next turn----------------");
             if(game.declareWinner(currPlayer))
             {
                 break;
@@ -115,5 +146,20 @@ public class Uno {
             turn++;
         }
         
+    }
+
+    private static boolean canPlay(List<Card> handCards, Card topCard) {
+        for(Card card: handCards)
+        {
+            if(card.getColor() == topCard.getColor() || card.getNum() == topCard.getNum())
+            {
+                return true;
+            }
+            if(card.getNum() == CardNo.DRAWFOUR || card.getNum() == CardNo.WILDCARD  )
+            {
+                return true;
+            }
+        }
+       return false;
     }
 }
