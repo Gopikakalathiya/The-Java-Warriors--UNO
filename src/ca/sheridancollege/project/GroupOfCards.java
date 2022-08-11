@@ -11,6 +11,7 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * A concrete class that represents any grouping of cards for a Game.
@@ -25,10 +26,17 @@ public class GroupOfCards
     private ArrayList <Card> cards;
     private int size;//the size of the grouping
     
-    public GroupOfCards(int givenSize)
+    public GroupOfCards()
     {
-        size = givenSize;
+        this.cards = new ArrayList<Card>();
+        for(CardNo no: CardNo.values()){
+            for(CardColor color: CardColor.values()){
+                cards.add(new Card(no, color));
+            }
+        }
+        
     }
+
     
     /**
      * A method that will get the group of cards as an ArrayList
@@ -56,6 +64,19 @@ public class GroupOfCards
      */
     public void setSize(int givenSize) {
         size = givenSize;
+    }
+
+
+    void dealCard(Player currPlayer) {
+            for (int i = 0; i < 7; i++) {
+            Card deleteCard = cards.remove(0);
+            currPlayer.getHandCards().add(deleteCard);
+        }    
+    }
+
+    void addCard(Player currPlayer) {
+        Card deleteCard = cards.remove(0);
+            currPlayer.getHandCards().add(deleteCard);
     }
     
 }//end class

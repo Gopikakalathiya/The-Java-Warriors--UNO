@@ -15,7 +15,7 @@ package ca.sheridancollege.project;
  * should remember to add themselves as a modifier.
  * @author dancye, 2018
  */
-public abstract class Card 
+public class Card 
 {
     //default modifier for child classes
     
@@ -23,8 +23,32 @@ public abstract class Card
      * Students should implement this method for their specific children classes 
      * @return a String representation of a card. Could be an UNO card, a regular playing card etc.
      */
-    
+    CardNo num;
+    CardColor color;
+    public Card(CardNo num, CardColor color) {
+    this.num = num;
+    this.color = color;
+    }
+
+    public CardNo getNum() {
+        return num;
+    }
+
+    public void setNum(CardNo num) {
+        this.num = num;
+    }
+
+    public CardColor getColor() {
+        return color;
+    }
+
+    public void setColor(CardColor color) {
+        this.color = color;
+    }
+
     @Override
-    public abstract String toString();
+    public String toString(){
+        return num + " of "+ color;
+    }
     
 }

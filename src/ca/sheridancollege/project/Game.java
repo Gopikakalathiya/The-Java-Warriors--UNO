@@ -10,30 +10,26 @@
 package ca.sheridancollege.project;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The class that models your game. You should create a more specific
  * child of this class and instantiate the methods given.
  * @author dancye, 2018
  */
-public abstract class Game 
+public class Game 
 {
-    private final String gameName;//the title of the game
+    final private static int NUMCARDSHAND = 7;
+    private GroupOfCards groupOfCards;
     private ArrayList <Player> players;// the players of the game
-    
-    public Game(String givenName)
+    private Player player;
+    public Game()
     {
-        gameName = givenName;
+        initGame();
+        
         players = new ArrayList();
     }
 
-    /**
-     * @return the gameName
-     */
-    public String getGameName() 
-    {
-        return gameName;
-    }
     
      /**
      * @return the players of this game
@@ -50,18 +46,31 @@ public abstract class Game
     {
         this.players = players;
     }
-    
-    /**
-     * Play the game. This might be one method or many method calls depending
-     * on your game.
-     */
-    public abstract void play();
-    
+
     /**
      * When the game is over, use this method to declare and display a winning
      * player.
      */
-    public abstract void declareWinner();
+    public boolean declareWinner(Player p)
+    {
+        if(p.getHandCards().isEmpty())
+        {
+            System.out.println("Winner!!! is Player:  " + p.toString() );
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+
+    private void initGame() {
+        
+        groupOfCards = new GroupOfCards();
+
+        
+        
+    }
 
    
     
