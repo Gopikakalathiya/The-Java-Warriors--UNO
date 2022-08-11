@@ -17,7 +17,6 @@ public class Uno {
         Player p1 = new Player("Player 1");
         Player p2 = new Player("Player 2");
         
-        
         //create new game
         Game game = new Game();
         
