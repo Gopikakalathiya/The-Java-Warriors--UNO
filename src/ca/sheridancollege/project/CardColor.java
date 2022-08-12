@@ -8,6 +8,7 @@ package ca.sheridancollege.project;
 /**
  *
  * @author Group - The Java Warriors - UNO - Gopika, Ramandeep, Naman, Simaran
+ * Date: 11th August, 2022
  */
 public enum CardColor {
     BLUE(0, "Blue"),
