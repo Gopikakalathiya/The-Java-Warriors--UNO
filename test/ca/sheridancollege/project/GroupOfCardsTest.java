@@ -14,17 +14,18 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
 /**
  *
  * @author gopik
  */
+
+
 public class GroupOfCardsTest {
     
     public GroupOfCardsTest() {
     }
     
-      @BeforeClass
+    @BeforeClass
     public static void setUpClass() throws Exception {
     }
 
@@ -39,6 +40,7 @@ public class GroupOfCardsTest {
     @After
     public void tearDown() throws Exception {
     }
+    
     /**
      * Test of dealCard method, of class GroupOfCards.
      */
@@ -116,4 +118,6 @@ public class GroupOfCardsTest {
         
         assertEquals(count, currPlayer.getHandCards().size());
     }
+
+    
 }

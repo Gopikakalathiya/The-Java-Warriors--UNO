@@ -9,7 +9,7 @@ package ca.sheridancollege.project;
  *
  * @author Group - The Java Warriors - UNO - Gopika, Ramandeep, Naman, Simaran
  */
-public enum CardNo {
+public enum CardNo  {
     ZERO(0, "Zero"),
     ONE(1, "One"),
     TWO(2, "Two"),
